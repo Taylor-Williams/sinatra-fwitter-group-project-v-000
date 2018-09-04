@@ -53,7 +53,7 @@ class TweetsController < ApplicationController
       tweet = Tweet.find(params[:id])
       tweet.update(content: params[:content])
     end
-    redirect "/tweets/#{params[:id]}"
+    redirect "/tweets/#{params[:id]}/edit"
   end
 
 end
