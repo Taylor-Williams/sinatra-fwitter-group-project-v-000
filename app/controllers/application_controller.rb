@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    if params[:username] && params[:password] && params[:email]
+    if !params[:username].empty? && !params[:password].empty? && !params[:email].empty?
       user = User.create(username: params[:username], password: params[:password], email: params[:email])
       if user
         session[:user_id] = user.id
