@@ -48,8 +48,11 @@ class TweetsController < ApplicationController
     end
   end
 
-  post '/tweets/:slug/edit' do
-    redirect "/tweets/#{params[:slug]}/edit"
+  post '/tweets/:id/edit' do
+    if !params[:content].empty?
+      tweet = Tweet.find(params[:id])
+      tweet.update(content: params[:content])
+    redirect "/tweets/#{params[:id]}"
   end
 
 end
