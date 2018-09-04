@@ -3,3 +3,7 @@
 <textarea name="current_tweet" rows="5" cols="51">
   <%=@tweet.content%>
 </textarea>
+<p>new tweet:</p>
+<form class="edit_tweet" action="/tweets/<%=@tweet.id%>/edit" method="post">
+  <input type="text" name="content">
+</form>
