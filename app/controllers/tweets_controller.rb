@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    redirect "/tweets/#{@tweet.slug}"
+    redirect "/tweets"
   end
 
   post '/tweets/:slug/edit' do
