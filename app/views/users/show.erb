@@ -1,5 +1,5 @@
-<h1>welcome to <%=@user.name%>'s page!</h1>
-<h3>here are <%=@user.name%>'s tweets:</h3>
+<h1>welcome to <%=@user.username%>'s page!</h1>
+<h3>here are <%=@user.username%>'s tweets:</h3>
 <div class="user_tweets">
   <%@user.tweets.each_with_index do |tweet, i|%>
     <a href="/tweets/<%=tweet.id%>">#<%=i%></a>
