@@ -17,7 +17,8 @@ class TweetsController < ApplicationController
     end
   end
 
-  get '/tweets/:slug' do
+  get '/tweets/:id' do
+    @tweet = Tweet.find(params[:id])
     erb :"/tweets/show"
   end
 
