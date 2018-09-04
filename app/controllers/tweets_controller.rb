@@ -31,6 +31,8 @@ class TweetsController < ApplicationController
       if Tweet.find(params[:id]) && current_user == Tweet.find(params[:id]).user
         @tweet = Tweet.find(params[:id])
         erb :"/tweets/edit"
+      else
+        redirect '/tweets'
       end
     else
       redirect '/login'
