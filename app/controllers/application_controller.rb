@@ -44,6 +44,20 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  post '/login' do
+    if !params[:username].empty? && !params[:password].empty? && !params[:email].empty?
+      user = User.create(username: params[:username], password: params[:password], email: params[:email])
+      if user
+        session[:user_id] = user.id
+        redirect '/tweets'
+      else
+        redirect '/login'
+      end
+    else
+      redirect '/login'
+    end
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
