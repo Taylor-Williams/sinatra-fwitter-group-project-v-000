@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   post '/users/:slug/edit' do
-    redirect "/users/#{params[:slug]}/edit"
+    redirect "/users/#{params[:slug]}"
   end
 
 end
