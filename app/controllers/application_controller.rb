@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
     if !logged_in?
       erb :login
     else
-      erb :"/users/#{session[:user_id]}"
+      redirect "/users/#{session[:user_id]}"
     end
   end
 
