@@ -10,7 +10,11 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/new' do
-    erb :"/tweets/new"
+    if logged_in?
+      erb :"/tweets/new"
+    else
+      erb :failure
+    end
   end
 
   get '/tweets/:slug' do
