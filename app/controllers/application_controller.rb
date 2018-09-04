@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
     if !logged_in?
       erb :signup
     else
-      redirect "/users/#{session[:user_id]}"
+      redirect '/tweets'
     end
   end
 
